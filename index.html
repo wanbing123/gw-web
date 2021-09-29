@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />		
+	</head>
+	<body>
+		<div class="wrap" id="index">
+			<!--顶部-->
+			<header class="header clearfix">
+				<div class="header-con">
+					<!--logo-->
+					<h1 class="logo fleft">
+					  <a href="#"><img src="img/logo.png" /></a>
+					</h1>
+					<!--search-->
+					<section class="header-search fleft">
+						<input value="" placeholder="search" />
+						<button type="button">
+							<img src="svg/ss.svg"/>
+						</button>
+					</section>				
+					<section class="header-language fright" id="header-language-id">
+						<p class="selected" id="js-language-selected" @click="showLanguage()">
+							<img src="svg/xl.svg" class="xl" :class="{'active': isShowLanguage}"/>
+							<span v-if="languageType == 1"><img src="svg/ry.svg"/>日本语</span>
+							<span v-if="languageType == 2"><img src="svg/zw.svg"/>中文</span>
+							<span v-if="languageType == 3"><img src="svg/yy.svg"/>English</span>
+						</p>
+						<ul v-show="isShowLanguage">
+							<li @click="selectLanguage(1)" v-if="languageType != 1"><img src="svg/ry.svg"/>日本语</li>
+							<li @click="selectLanguage(2)" v-if="languageType != 2"><img src="svg/zw.svg"/>中文</li>
+							<li @click="selectLanguage(3)" v-if="languageType != 3"><img src="svg/yy.svg"/>English</li>
+						</ul>
+					</section>
+					<!--未登录状态-->
+					<section class="header-btngroup fright" v-if="!isLogin">
+						<a class="btn-white-radius">新規登録</a>
+						<a class="btn-black-radius">Login</a>
+					</section>
+					<!--已登录状态-->
+					<section class="header-userinfo fright" v-if="isLogin">
+						<a href="#" class="wdsc">私のコレクション</a>
+						<img src="img/head.jpg"  class="tx" id="js-userinfo-select1" @click="showUserinfo" />
+						<dl v-show="isShowUserinfo" >
+							<dt id="js-userinfo-select2">username</dt>
+							<dd><a href="#">ユーザ設定</a></dd>
+							<dd><a href="#">ログアウト</a></dd>
+						</dl>
+					</section>
+				</div>
+			</header>
+			<!--广告-->
+			<section class="banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><a href="#"><img src="img/banner1.jpg"></a></div>
+						<div class="swiper-slide"><a href="#"><img src="img/banner1.jpg"></a></div>
+						<div class="swiper-slide"><a href="#"><img src="img/banner1.jpg"></a></div>
+						<div class="swiper-slide"><a href="#"><img src="img/banner1.jpg"></a></div>
+					</div>
+					<!-- Add Arrows -->
+					<img src="svg/icon-prev.svg"  class="banner-btn banner-btn-prev swiper-button-prev" />
+					<img src="svg/icon-next.svg"  class="banner-btn banner-btn-next swiper-button-next" />					
+				</div>
+			</section>
+			<!--main-->
+			<section class="main">
+				<!--人気商品-->
+				<div class="title">人気商品</div>
+				<div class="part1">	
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><a href="#"><img src="img/test.jpeg" /><p>イヤリング</p></a></div>
+							<div class="swiper-slide"><a href="#"><img src="img/img2.jpg" /><p>イヤリング</p></a></div>
+							<div class="swiper-slide"><a href="#"><img src="img/img1.jpg" /><p>イヤリング</p></a></div>
+							<div class="swiper-slide"><a href="#"><img src="img/img2.jpg" /><p>イヤリング</p></a></div>
+							<div class="swiper-slide"><a href="#"><img src="img/img1.jpg" /><p>イヤリング</p></a></div>
+							<div class="swiper-slide"><a href="#"><img src="img/img2.jpg" /><p>イヤリング</p></a></div>
+						</div>						
+					</div>
+					<!-- Add Arrows -->
+					<img src="svg/icon-prev1.svg"  class="part1-btn part1-btn-prev swiper-button-prev" />
+					<img src="svg/icon-next1.svg"  class="part1-btn part1-btn-next swiper-button-next" />	
+				</div>
+				<!--广告-->
+				<div class="add"><a href="#"><img src="img/add.jpg" /></a></div>
+				<!--最新発売-->
+				<div class="title">最新発売</div>
+				<div class="part2 clearfix">
+					<div class="part2-con">
+						<a href="#"><img src="img/test.jpeg" />
+						<h2>プティパレプティパレプティパ</h2>
+						<h3>JPY¥2000</h3>
+						<p>≈<span>¥1700</span></p>
+						<p>≈<span>$170</span></p></a>
+					</div>
+					<div class="part2-con">
+						<a href="#"><img src="img/img3.jpg" />
+						<h2>プティパレプティパレプティパ</h2>
+						<h3>JPY¥2000</h3>
+						<p>≈<span>¥1700</span></p>
+						<p>≈<span>$170</span></p></a>
+					</div>
+					<div class="part2-con">
+						<a href="#"><img src="img/img3.jpg" />
+						<h2>プティパレプティパレプティパ</h2>
+						<h3>JPY¥2000</h3>
+						<p>≈<span>¥1700</span></p>
+						<p>≈<span>$170</span></p></a>
+					</div>
+				</div>
+				<!--固定価格商品-->
+				<div class="title clearfix" id="part2-title-id">
+					<span @click="tabTitleSp(1)" :class="{'cur':curSp == 1}">固定価格商品</span>
+					<span @click="tabTitleSp(2)" :class="{'cur':curSp == 2}">オークション商品</span>
+					<div class="title-select fright">
+						<p @click="showOrderSp()">
+							{{orderSpText}}<img src="svg/xl.svg" class="xl" :class="{'active': isShowOrderSp}"/>
+						</p>
+						<ul v-if="isShowOrderSp">
+							<li @click="selectOrderSp('人気顺で并び替え')">人気顺で并び替え</li>
+							<li @click="selectOrderSp('发売日时降顺で并び替え')">发売日时降顺で并び替え</li>
+							<li @click="selectOrderSp('价格降顺で并び替え')">价格降顺で并び替え</li>
+						</ul>
+					</div>
+				</div>
+				<div class="part2 clearfix">
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img4.jpg" class="part2-con-img" />
+							<h2>プティパレプティパレプティパ</h2>
+							<p>レザー素材</p>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+						<div class="dz" :class="{'ydz': isDz}">
+							<img src="svg/wdz.svg" v-if="!isDz" />
+							<img src="svg/ydz.svg" v-if="isDz"/>123
+						</div>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img4.jpg" class="part2-con-img" />
+							<h2>プティパレプティパレプティパ</h2>
+							<p>レザー素材</p>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+						<span class="dz" :class="{'ydz': isDz}">
+							<img src="svg/wdz.svg" v-if="!isDz" />
+							<img src="svg/ydz.svg" v-if="isDz"/>123
+						</span>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img4.jpg" class="part2-con-img" />
+							<h2>プティパレプティパレプティパ</h2>
+							<p>レザー素材</p>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+						<div class="dz" :class="{'ydz': isDz}">
+							<img src="svg/wdz.svg" v-if="!isDz" />
+							<img src="svg/ydz.svg" v-if="isDz"/>123
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--footer-->
+			<footer class="footer clearfix">
+				<div class="footer-con">
+					<h1 class="logo fleft">
+						<img src="img/logo1.png" />
+					</h1>
+					<div class="footer-nav">
+						<dl>
+							<dt>コミュニティ</dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt>コミュニティ</dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt>コミュニティ</dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="libs/vue.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="libs/swiper/swiper-bundle.min.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+	</body>
+</html>

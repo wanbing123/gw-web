@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>取引一覧</title>
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/public.css" />
+  <link rel="stylesheet" href="css/personal.css" />
+</head>
+
+<body>
+  <div class="wrap" id="personalNav1">
+    <!--顶部-->
+    <header class="header clearfix">
+      <div class="header-con">
+        <!--logo-->
+        <h1 class="logo fleft">
+          <a href="#"><img src="img/logo.png" /></a>
+        </h1>
+        <!--search-->
+        <section class="header-search fleft">
+          <input value="" placeholder="search" />
+          <button type="button">
+            <img src="svg/ss.svg" />
+          </button>
+        </section>
+        <section class="header-language fright" id="header-language-id">
+          <p class="selected" id="js-language-selected" @click="showLanguage()">
+            <img src="svg/xl.svg" class="xl" :class="{'active': isShowLanguage}" />
+            <span v-if="languageType == 1"><img src="svg/ry.svg" />日本语</span>
+            <span v-if="languageType == 2"><img src="svg/zw.svg" />中文</span>
+            <span v-if="languageType == 3"><img src="svg/yy.svg" />English</span>
+          </p>
+          <ul v-show="isShowLanguage">
+            <li @click="selectLanguage(1)" v-if="languageType != 1"><img src="svg/ry.svg" />日本语</li>
+            <li @click="selectLanguage(2)" v-if="languageType != 2"><img src="svg/zw.svg" />中文</li>
+            <li @click="selectLanguage(3)" v-if="languageType != 3"><img src="svg/yy.svg" />English</li>
+          </ul>
+        </section>
+        <section class="header-btngroup fright">
+          <a class="btn-white-radius">新規登録</a>
+          <a class="btn-black-radius">Login</a>
+        </section>
+      </div>
+    </header>
+    <!--personal-->
+    <div class="personal-header">
+      <div class="main clearfix">
+        <div class="personal-header-img fleft">
+          <img src="img/head.jpg" />
+        </div>
+        <div class="personal-header-info fleft">
+          <h2>Username</h2>
+          <div class="info ">
+            自己紹介です。好きなだけ書いてください。単語数に制限はありません。書くだけです。自己紹介です。好きなだけ書いてください。単語数に制限はありません。書くだけです。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--main-->
+    <section class="main clearfix">
+      <div class="personal-left fleft">
+        <ul>
+          <li><a href="#">コレクション</a></li>
+          <li class="active"><a href="#">取引一覧</a></li>
+          <li><a href="#">ユーザ設定</a></li>
+          <li><a href="#">クレジットカード管理</a></li>
+          <li><a href="#">出品</a></li>
+          <li><a href="#">友達招待</a></li>
+          <li><a href="#">お気に入り</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="personal-right fright">
+        <section class="personal-tabs-title">
+          <span @click="tabTypeTitle(1)" :class="{'cur':curTypeTitle == 1}">購入一覧</span>
+          <span @click="tabTypeTitle(2)" :class="{'cur':curTypeTitle == 2}">販売一覧</span>
+        </section>
+        <!--コレクション-->
+        <section class="personal-tabs-body" v-if="curTypeTitle == 1">
+          <span @click="tabTypeBody(1)" :class="{'cur':curTypeBody == 1}">定额商品</span>
+          <span @click="tabTypeBody(2)" :class="{'cur':curTypeBody == 2}">入札中</span>
+          <span @click="tabTypeBody(3)" :class="{'cur':curTypeBody == 3}">落札分</span>
+        </section>
+        <!--コレクション-->
+        <div class="personal-sp" v-if="curTypeTitle == 1">
+          <!--定额商品-->
+          <div class="desp-table-con" v-if="curTypeBody == 1">
+	          <table class="desp-table">
+	            <colgroup>
+	              <col width="165">
+	              <col width="175">
+	              <col width="150">
+	              <col>
+	              <col width="150">
+	              <col width="175">
+	            </colgroup>
+	            <thead class="desp-table-head">
+	              <tr>
+	                <td>日付</td>
+	                <td>商品名称</td>
+	                <td>出品者</td>
+	                <td>テータス</td>
+	                <td>支払期限</td>
+	                <td>购入価格</td>
+	              </tr>
+	            </thead>
+	            <tbody class="desp-table-body">
+	              <tr>
+	                <td>2021/08/10</td>
+	                <td>商品名</td>
+	                <td>这里是用户名</td>
+	                <td><span class="state1">支払方式</span></td>
+	                <td class="datetimes">
+	                  <p>2021/09/21</p>
+	                  <p>24:00:00</p>
+	                </td>
+	                <td>2999円</td>
+	              </tr>
+	              <tr>
+	                <td>2021/08/10</td>
+	                <td>商品名</td>
+	                <td>这里是用户名</td>
+	                <td><span class="state1">支払方式</span></td>
+	                <td class="datetimes">
+	                  <p>2021/09/21</p>
+	                  <p>24:00:00</p>
+	                </td>
+	                <td>2999円</td>
+	              </tr>
+	              <tr>
+	                <td>2021/08/10</td>
+	                <td>商品名</td>
+	                <td>这里是用户名</td>
+	                <td><span class="state2">支払いを待つ</span></td>
+	                <td class="datetimes">
+	                  <p>2021/09/21</p>
+	                  <p>24:00:00</p>
+	                </td>
+	                <td>2999円</td>
+	              </tr>
+	              <tr>
+	                <td>2021/08/10</td>
+	                <td>商品名</td>
+	                <td>这里是用户名</td>
+	                <td><span class="state3">キャンセル</span></td>
+	                <td class="datetimes">
+	                  <p>2021/09/21</p>
+	                  <p>24:00:00</p>
+	                </td>
+	                <td>2999円</td>
+	              </tr>
+	              <tr>
+	                <td>2021/08/10</td>
+	                <td>商品名</td>
+	                <td>这里是用户名</td>
+	                <td><span class="state2">支払確認待ち</span></td>
+	                <td class="datetimes">
+	                  <p>2021/09/21</p>
+	                  <p>24:00:00</p>
+	                </td>
+	                <td>2999円</td>
+	              </tr>
+	            </tbody>
+	          </table>
+	          <div class="table-pages">
+	          	<span class="total">2タク，1ペーシ</span>
+	          	<a class="prev">前のページ</a>
+	          	<a class="page">1</a>
+	          	<a class="next">次のペーシ</a>
+	          </div>
+	        </div>
+					<!--入札中-->
+          <div class="personal-sp-item" v-if="curTypeBody == 2">
+            <a href="#"><img src="img/img1.jpg" />
+              <p>イヤリング</p>
+            </a>
+            <span class="state cpz">出品中</span>
+            <div class="personal-sp-btngroup large clearfix">
+              <button type="button" class="btn-white-radius" data-toggle="modal" data-target="#cpzModal">出品取消</button>
+            </div>
+          </div>
+          <!--落札分-->
+          <div class="personal-sp-item" v-if="curTypeBody == 3">
+            <a href="#">
+              <img src="img/img1.jpg" />
+              <div class="info">
+                <span class="t1">イヤリング</span>
+                <span class="t2">20,000 円</span>
+                <span class="t3">出品日時：2021-08-09</span>
+              </div>
+            </a>
+            <span class="state cpzl">出品終了</span>
+          </div>
+
+        </div>
+        <!--現物引換一覧-->
+        <div class="personal-xh" v-if="curTypeTitle == 2">
+          <div class="personal-xh-item">
+            <img src="img/img2.jpg" class="img" />
+            <section class="infoXwyy">
+              <h3 class="xxyhyl"><span class="spm">商品名</span><span class="dsd">発送待ち</span></h3>
+              <p class="dizhi"><span class="dizhi1">東京市-新宿区-*****</span><span class="dizhi2">配送業者：****</span></p>
+              <p class="tels"><span class="tels1">177-0999-3333</span><span class="tels2">追跡番号：7777 **** ****
+                  7777</span></p>
+              <button type="button" class="sqqrbtn" data-toggle="modal" data-target="#xwyhylModal">受取を確認する</button>
+            </section>
+          </div>
+          <div class="personal-xh-item">
+            <img src="img/img2.jpg" class="img" />
+            <section class="infoXwyy">
+              <h3 class="xxyhyl"><span class="spm">商品名</span><span class="dsd">発送待ち</span></h3>
+              <p class="dizhi"><span class="dizhi1">東京市-新宿区-*****</span><span class="dizhi2">配送業者：****</span></p>
+              <p class="tels"><span class="tels1">177-0999-3333</span><span class="tels2">追跡番号：7777 **** ****
+                  7777</span></p>
+              <button type="button" class="sqqrbtn" data-toggle="modal" data-target="#xwyhylModal">受取を確認する</button>
+            </section>
+          </div>
+          <div class="personal-xh-item">
+            <img src="img/img2.jpg" class="img" />
+            <section class="infoXwyy">
+              <h3 class="xxyhyl"><span class="spm">商品名</span><span class="dsd">発送待ち</span></h3>
+              <p class="dizhi"><span class="dizhi1">東京市-新宿区-*****</span><span class="dizhi1">配送業者：****</span></p>
+              <p class="tels"><span class="tels1">177-0999-3333</span><span class="tels2">追跡番号：7777 **** ****
+                  7777</span></p>
+              <button type="button" class="sqqrbtn" data-toggle="modal" data-target="#xwyhylModal">受取を確認する</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--footer-->
+    <footer class="footer clearfix">
+      <div class="footer-con">
+        <h1 class="logo fleft">
+          <img src="img/logo1.png" />
+        </h1>
+        <div class="footer-nav">
+          <dl>
+            <dt><a>コミュニティ</a></dt>
+            <dd><a>お問い合わせ</a></dd>
+            <dd><a>事業協力</a></dd>
+          </dl>
+          <dl>
+            <dt><a>コミュニティ</a></dt>
+            <dd><a>お問い合わせ</a></dd>
+            <dd><a>事業協力</a></dd>
+          </dl>
+          <dl>
+            <dt><a>コミュニティ</a></dt>
+            <dd><a>お問い合わせ</a></dd>
+            <dd><a>事業協力</a></dd>
+          </dl>
+        </div>
+      </div>
+    </footer>
+    <!--出品中modal-->
+    <div class="modal fade" id="cpzModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-message">
+        <div class="modal-content">
+          <div class="modal-body">
+            出品を取り消します。よろしいですか？
+          </div>
+          <div class="modal-footer modal-gryhk-footer clearfix">
+            <button type="button" class="modal-btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="modal-btn-primary" @click="zpzConfim">確認</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+    <!-- 現物引換一覧modal -->
+    <div class="modal fade" id="xwyhylModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-message">
+        <div class="modal-content">
+          <div class="modal-body-xwyh1">
+            受取を確認する
+          </div>
+          <div class="modal-body-xwyh2">NFTの実物を届きましたか？</div>
+          <div class="modal-footer modal-gryhk-footer clearfix">
+            <button type="button" class="modal-btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="modal-btn-primary" @click="zpzConfim">確認</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+  </div>
+  <script type="text/javascript" src="libs/vue.min.js"></script>
+  <script type="text/javascript" src="libs/jquery-1.11.0.js"></script>
+  <script type="text/javascript" src="libs/jquery.nicescroll.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="js/qyyl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>密码修改成功</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/public.css" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+
+<body>
+  <div class="wrap" id="registerSuccess">
+    <!--顶部-->
+    <header class="header clearfix">
+      <div class="header-con">
+        <!--logo-->
+        <h1 class="logo fleft">
+          <a href="#"><img src="img/logo.png" /></a>	
+        </h1>
+        <!--search-->
+        <section class="header-search fleft">
+          <input value="" placeholder="search" />
+          <button type="button">
+            <img src="svg/ss.svg" />
+          </button>
+        </section>
+        <section class="header-language fright" id="header-language-id">
+          <p class="selected" id="js-language-selected" @click="showLanguage()">
+            <img src="svg/xl.svg" class="xl" :class="{'active': isShowLanguage}" />
+            <span v-if="languageType == 1"><img src="svg/ry.svg" />日本语</span>
+            <span v-if="languageType == 2"><img src="svg/zw.svg" />中文</span>
+            <span v-if="languageType == 3"><img src="svg/yy.svg" />English</span>
+          </p>
+          <ul v-show="isShowLanguage">
+            <li @click="selectLanguage(1)" v-if="languageType != 1"><img src="svg/ry.svg" />日本语</li>
+            <li @click="selectLanguage(2)" v-if="languageType != 2"><img src="svg/zw.svg" />中文</li>
+            <li @click="selectLanguage(3)" v-if="languageType != 3"><img src="svg/yy.svg" />English</li>
+          </ul>
+        </section>
+        <section class="header-btngroup fright">
+          <a class="btn-white-radius">新規登録</a>
+          <a class="btn-black-radius">Login</a>
+        </section>
+      </div>
+    </header>
+    <!--content-->
+    <section class="register-content">
+      <header class="register-success-title">パスワード変更成功</header>
+      <div class="register-success-icon">
+        <img src="svg/sucsess.svg" alt="">
+      </div>
+      <a href="#" class="btn-black-radius-large">ログイン</a>
+    </section>
+
+  </div>
+  <script type="text/javascript" src="libs/vue.min.js"></script>
+  <script type="text/javascript" src="libs/jquery-1.11.0.js"></script>
+  <script type="text/javascript" src="js/registerSuccess.js"></script>
+</body>
+
+</html>

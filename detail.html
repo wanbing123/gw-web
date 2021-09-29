@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>商品详情</title>
+		<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/detail.css" />
+	</head>
+	<body>
+		<div class="wrap" id="detail">
+			<!--顶部-->
+			<header class="header clearfix">
+				<div class="header-con">
+					<!--logo-->
+					<h1 class="logo fleft">
+						<a href="#"><img src="img/logo.png" /></a>					  
+					</h1>
+					<!--search-->
+					<section class="header-search fleft">
+						<input value="" placeholder="search" />
+						<button type="button">
+							<img src="svg/ss.svg"/>
+						</button>
+					</section>				
+					<section class="header-language fright" id="header-language-id">
+						<p class="selected" id="js-language-selected" @click="showLanguage()">
+							<img src="svg/xl.svg" class="xl" :class="{'active': isShowLanguage}"/>
+							<span v-if="languageType == 1"><img src="svg/ry.svg"/>日本语</span>
+							<span v-if="languageType == 2"><img src="svg/zw.svg"/>中文</span>
+							<span v-if="languageType == 3"><img src="svg/yy.svg"/>English</span>
+						</p>
+						<ul v-show="isShowLanguage">
+							<li @click="selectLanguage(1)" v-if="languageType != 1"><img src="svg/ry.svg"/>日本语</li>
+							<li @click="selectLanguage(2)" v-if="languageType != 2"><img src="svg/zw.svg"/>中文</li>
+							<li @click="selectLanguage(3)" v-if="languageType != 3"><img src="svg/yy.svg"/>English</li>
+						</ul>
+					</section>
+					<section class="header-btngroup fright">
+						<a class="btn-white-radius">新規登録</a>
+						<a class="btn-black-radius">Login</a>
+					</section>
+				</div>
+			</header>			
+			<!--main-->
+			<section class="main">
+				<div class="intro clearfix">
+					<div class="intro-left fleft">
+						<section class="intro-img">
+							<img src="img/img5.jpg" class="intro-img-item" />
+							<img src="svg/fd.svg" class="intro-img-fd" />
+						</section>
+						<section class="intro-share clearfix">
+							<div class="fx fleft">
+								<img src="svg/share-icon1.svg" />
+								<img src="svg/share-icon2.svg" />
+							</div>
+							<div class="dz fright" :class="{'ydz': isDz}">
+								<img src="svg/wdz.svg" v-if="!isDz" />
+								<img src="svg/ydz.svg" v-if="isDz"/>123
+							</div>
+						</section>
+					</div>
+					<div class="intro-right fright">
+						<h2><span>#04</span>キングシリーズ新製品</h2>
+						<section class="intro-user clearfix">
+							<span class="intro-user-head"><img src="img/head.jpg"></span>
+							<p class="intro-user-info">オーナー</p>
+							<p class="intro-user-name">username</p>
+						</section>
+						<section class="intro-tabs">
+							<span @click="tabTypeXq(1)" :class="{'cur':curXq == 1}">購入</span>
+							<span @click="tabTypeXq(2)" :class="{'cur':curXq == 2}">詳細</span>
+							<span @click="tabTypeXq(3)" :class="{'cur':curXq == 3}">入札履歴</span>
+						</section>
+						<!--購入-->
+						<section class="intro-gr" v-show="curXq == 1">
+							<div class="intro-gr-part1">
+								<p><span>スタート価格</span>2999円</p>
+								<p><span>価格</span>12999円</p>
+							</div>
+							<div class="intro-gr-part2">
+								<p><span>00:02:02</span>オークション終了まであと</p>
+							</div>
+							<div class="intro-gr-part3">
+								<header>コントラクト確認</header>
+								<p><span>スタート価格</span>0x2a46f2...bf0756</p>
+								<p><span>価格</span>12999円</p>
+								<p><span>スタート価格</span>0x2a46f2...bf0756</p>
+								<p><span>価格</span>12999円</p>
+							</div>
+							<!--增加data-toggle、data-target属性-->
+							<button class="intro-gr-btn" type="button" data-toggle="modal" data-target="#grModal">購入</button>
+						</section>
+						<!--詳細-->
+						<section class="intro-xx"  v-show="curXq == 2">
+							<div class="intro-xx-part1">
+								<p><span>出品時刻</span>2021/07/27 AM 02:44</p>
+							</div>
+							<div class="intro-xx-part2" id="intro-xx-id">
+								<header>説明</header>
+								<p>構図は非常に正確で、絵は木々を使って空を浮かび上がらせ、下院は限りない宇宙を支え、微妙な構図のバランスをとっています。特に、ゴッホ自身がかつて述べたように、ヒノキの木の線は滑らかで独特に描かれています。ヒノキの木の比率は、エジプトのピラミッドやオベリスクと同じくらい美しいです。澄んだ風景の中の黒い水しぶきです。」絵画技法の観点から、ゴッホは、オブジェクトを表現するための線や表面だけでなく、初期の印象主義の特徴のいくつかを受け入れました。
+澄んだ風景の中の黒い水しぶきです。」絵画技法の観点から、ゴッホは、オブジェクトを表現するための線や表面だけでなく、初期の印象主義の特徴のいくつかを受けの黒い水しぶきです。」絵画技法の観点から、ゴッホは、オブジェクトを表現するための線や表面だけでな</p>
+							</div>
+						</section>
+						<!--入札履歴-->
+						<section class="intro-ls" v-show="curXq == 3">
+							<div class="intro-ls-part clearfix">
+								<div class="intro-ls-header">
+									<p class="tr1">ユーザー</p>
+									<p class="tr2">入札</p>
+									<p class="tr3">時間</p>
+								</div>
+								<div class="intro-ls-body" id="intro-ls-id">
+								    <div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+									<div class="intro-ls-item">
+										<div class="intro-ls-item-box">
+											<p class="tr1">ユーザー</p>
+											<p class="tr2">入札</p>
+											<p class="tr3">時間</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!--人気商品-->
+				<div class="title">人気商品</div>
+				<div class="part2 clearfix">
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+				</div>
+			</section>
+			<!--footer-->
+			<footer class="footer clearfix">
+				<div class="footer-con">
+					<h1 class="logo fleft">
+						<img src="img/logo1.png" />
+					</h1>
+					<div class="footer-nav">
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+					</div>
+				</div>
+			</footer>			
+			<!--入札modal-->
+			<div class="modal fade" id="grModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-box">
+					<div class="modal-content">						
+						<div class="modal-body">
+							<div class="modal-gr">
+								<header class="modal-gr-title">入札</header>
+								<section class="modal-gr-part1">
+									<p><span>スタート価格</span>2999円</p>
+									<p><span>価格</span>12999円</p>
+								</section>
+								<section class="modal-gr-part2">
+									<label>入札価格<span>入札単位 1000円</span></label>
+									<div class="modal-gr-price">
+										<input type="text" v-model="price" class="inp" />
+										<span class="suffix">円</span>
+										<span class="arrow">
+											<img src="svg/icon-arrow-up.svg" />
+											<img src="svg/icon-arrow-down.svg" />
+										</span>
+									</div>									
+								</section>
+							</div>
+						</div>
+						<div class="modal-footer modal-gr-footer clearfix">
+							<button type="button" class="modal-btn-default" data-dismiss="modal">キャンセル</button>
+							<button type="button" class="modal-btn-primary" @click="grConfim">OK</button>
+						</div>
+						<a data-toggle="modal" data-target="#gryhkModal">绑定银行卡临时入口，后续删除</a>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+			<!--绑定银行卡modal-->
+			<div class="modal fade" id="gryhkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-box">
+					<div class="modal-content">						
+						<div class="modal-body">
+							<div class="modal-gryhk">
+								<header class="modal-gryhk-title">お支払いカードの選択</header>
+								<section class="modal-gryhk-part">
+									<p>クレジットカード</p>
+									<p class="clearfix"><input class="radio-style" type="radio"/><span>JCB</span><span>末尾  1111</span><span>有効期限06/22</span></p>
+								</section>								
+							</div>
+						</div>
+						<div class="modal-footer modal-gryhk-footer clearfix">
+							<button type="button" class="modal-btn-default" data-dismiss="modal">戻る</button>
+							<button type="button" class="modal-btn-primary" @click="gryhkConfim">次へ</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+			<!--入札完了-->
+			<div class="modal fade" id="grwcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-box">
+					<div class="modal-content">						
+						<div class="modal-body">
+							<div class="modal-tip">
+								<header class="modal-tip-title">入札完了</header>
+								<section class="modal-tip-icon">
+									<img src="svg/sucsess.svg" alt="">
+								</section>
+							</div>
+						</div>
+						<div class="modal-tip-footer clearfix">
+							<button type="button" class="modal-btn-primary-large" @click="grwcConfim">完了</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+		</div>
+		<script type="text/javascript" src="libs/vue.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="libs/jquery.nicescroll.js" ></script>
+		<<script type="text/javascript" src="libs/bootstrap/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/detail.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>个人中心</title>
+		<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/detail.css" />
+	</head>
+	<body>
+		<div class="wrap" id="personal">
+			<!--顶部-->
+			<header class="header clearfix">
+				<div class="header-con">
+					<!--logo-->
+					<h1 class="logo fleft">
+						<a href="#"><img src="img/logo.png" /></a>					  
+					</h1>
+					<!--search-->
+					<section class="header-search fleft">
+						<input value="" placeholder="search" />
+						<button type="button">
+							<img src="svg/ss.svg"/>
+						</button>
+					</section>				
+					<section class="header-language fright" id="header-language-id">
+						<p class="selected" id="js-language-selected" @click="showLanguage()">
+							<img src="svg/xl.svg" class="xl" :class="{'active': isShowLanguage}"/>
+							<span v-if="languageType == 1"><img src="svg/ry.svg"/>日本语</span>
+							<span v-if="languageType == 2"><img src="svg/zw.svg"/>中文</span>
+							<span v-if="languageType == 3"><img src="svg/yy.svg"/>English</span>
+						</p>
+						<ul v-show="isShowLanguage">
+							<li @click="selectLanguage(1)" v-if="languageType != 1"><img src="svg/ry.svg"/>日本语</li>
+							<li @click="selectLanguage(2)" v-if="languageType != 2"><img src="svg/zw.svg"/>中文</li>
+							<li @click="selectLanguage(3)" v-if="languageType != 3"><img src="svg/yy.svg"/>English</li>
+						</ul>
+					</section>
+					<section class="header-btngroup fright">
+						<a class="btn-white-radius">新規登録</a>
+						<a class="btn-black-radius">Login</a>
+					</section>
+				</div>
+			</header>			
+			<!--personal-->
+			<div class="personal-header">
+				<div class="main clearfix">
+					<div class="personal-header-img fleft">
+						<img src="img/head.jpg" />
+					</div>
+					<div class="personal-header-info fleft">
+						<h2>Username</h2>
+						<div class="share">
+							<a href="#"><img src="svg/share-icon1.svg" alt=""></a>
+							<a href="#"><img src="svg/share-icon2.svg" alt=""></a>
+							<a href="#"><img src="svg/share-icon3.svg" alt=""></a>
+						</div>
+						<div class="info">
+							自己紹介です。好きなだけ書いてください。単語数に制限はありません。書くだけです。自己紹介です。好きなだけ書いてください。単語数に制限はありません。書くだけです。
+						</div>
+					</div>
+				</div>
+			</div>				
+			<!--main-->
+			<section class="main">				
+				<!--人気商品-->
+				<div class="title">ユーザが出品している商品</div>
+				<div class="part2 clearfix">
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+					<div class="part2-con">
+						<a href="#">
+							<img src="img/img3.jpg" />
+							<h2>プティパレプティパレプティパ</h2>
+							<h3>JPY¥2000</h3>
+							<p>≈<span>¥1700</span></p>
+							<p>≈<span>$170</span></p>
+						</a>
+					</div>
+				</div>
+			</section>
+			<!--footer-->
+			<footer class="footer clearfix">
+				<div class="footer-con">
+					<h1 class="logo fleft">
+						<img src="img/logo1.png" />
+					</h1>
+					<div class="footer-nav">
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+						<dl>
+							<dt><a>コミュニティ</a></dt>
+							<dd><a>お問い合わせ</a></dd>
+							<dd><a>事業協力</a></dd>
+						</dl>
+					</div>
+				</div>
+			</footer>			
+		</div>
+		<script type="text/javascript" src="libs/vue.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="libs/jquery.nicescroll.js" ></script>
+		<<script type="text/javascript" src="libs/bootstrap/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/personal.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,391 @@
+.intro{
+	width: 1200px;
+	margin: auto;
+	padding-top: 60px;
+}
+.intro-left{
+	width: 586px;
+}
+.intro-img{
+	width: 586px;
+	height: 684px;
+	position: relative;
+	z-index: 0;
+}
+.intro-img-item{
+	width: 586px;
+	height: 684px;
+	border-radius: 24px;
+	overflow: hidden;
+}
+.intro-img-fd{
+	position: absolute;
+	bottom: 24px;
+	right: 30px;
+	z-index: 0;
+	cursor: pointer;
+}
+.intro-share{
+	padding-top: 19px;
+	height: 78px;
+	border-bottom: solid 1px #E5E5E5;
+}
+.intro-share .fx{
+	width: 400px;
+}
+.intro-share .fx img{
+	width: 40px;
+	margin-left: 30px;
+}
+.intro-share .dz{	
+	width: 186px;	
+	line-height: 40px;
+	color: #969190;
+	font-size: 22px;
+	letter-spacing: 1.14px;
+	text-align: right;
+	cursor: pointer;
+}
+.intro-share .dz.ydz{
+	color: #FF609B;
+}
+.intro-share .dz img{
+	display: inline-block;
+	width: 22px;
+	height: 21px;
+	vertical-align: middle;
+}
+.intro-right {
+	float: right;
+	width: 534px;
+}
+.intro-right h2{
+	line-height: 44px;
+	font-size: 38px;
+}
+.intro-right h2 span{
+	margin-right: 16px;
+}
+.intro-user{
+	padding: 12px 0;	
+}
+.intro-user-head{
+	float: left;
+	margin-right: 16px;
+	border-radius: 24px;
+	width: 48px;
+	height: 48px;
+}
+.intro-user-info{
+	line-height: 24px;
+	font-size: 16px;
+	color: #969190;
+}
+.intro-user-name{
+	line-height: 24px;
+	font-size: 22px;
+	color: #231815;
+}
+.intro-tabs{
+	width: 100%;
+	line-height: 48px;
+	border-bottom: solid 1px #CFCFCF;
+}
+.intro-tabs span{
+	font-size: 18px;
+	margin-right: 60px;
+	color: #969190;
+	cursor: pointer;
+}
+.intro-tabs span.cur{
+	position: relative;
+	z-index: 0;
+	color: #231815;
+}
+.intro-tabs span.cur:after{
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 32px;
+	left: calc(50% - 15px);
+	width: 30px;
+	height: 4px;
+	border-radius: 2px;
+	background: #231815;
+}
+.intro-gr-part1{
+	margin-top: 8px;
+	padding: 20px 30px;
+	background: #F5F5F5;
+	border-radius: 16px;
+}
+.intro-gr-part1 p{
+	line-height: 45px;
+	font-size: 20px;	
+	text-align: right;
+}
+.intro-gr-part1 p span{
+	float: left;
+	font-size: 18px;
+}
+.intro-gr-part2{
+	margin-top: 7px;
+	font-size: 18px;
+	line-height: 73px;
+	padding: 0 30px;
+}
+.intro-gr-part2 span{
+	float: right;
+	font-size: 30px;
+}
+.intro-gr-part3{
+	margin-top: 8px;
+	padding: 20px 30px;
+	background: #F5F5F5;
+	border-radius: 16px;
+}
+.intro-gr-part3 header{
+	line-height: 40px;
+	font-size: 22px;
+	color: #231815;
+}
+.intro-gr-part3 p{
+	line-height: 40px;
+	font-size: 16px;	
+	text-align: right;
+	color: #0066ED;
+}
+.intro-gr-part3 p span{
+	float: left;
+	color: #231815;
+}
+.intro-gr-btn{
+	margin-top: 62px;
+	width: 100%;
+	height: 64px;
+	line-height: 64px;
+	border: 0;
+	background: #231815;
+	border-radius: 32px;
+	font-size: 24px;
+	color: #FFFFFF;
+}
+.intro-xx-part1{
+	line-height: 72px;
+}
+.intro-xx-part1 span{
+	display: inline-block;
+	width: 126px;
+}
+.intro-xx-part2{
+	padding: 30px;
+	width: 100%;
+	height: 440px;
+	background: #F5F5F5;
+	border-radius: 24px;
+}
+.intro-xx-part2 header{
+	font-size: 22px;
+	line-height: 30px;
+	height: 46px;
+}
+.intro-xx-part2 p{
+	font-size: 16px;
+	color: #969190;
+	letter-spacing: 1.5px;
+	line-height: 23px;
+}
+.intro-ls-part{
+	width: 100%;
+	height: 505px;
+	margin-top: 16px;
+	border: 1px solid #E5E5E5;
+	border-radius: 24px;
+}
+.intro-ls-header{
+	float: left;
+	height: 60px;
+	line-height: 50px;
+	padding: 10px 24px 0;
+	border-bottom: 1px solid #E5E5E5;
+	font-size: 16px;
+	color: #969190;
+}
+.intro-ls-item{
+	float: left;
+	padding: 0 24px;
+	line-height: 48px;
+	font-size: 16px;
+}
+.intro-ls-item-box{
+	float: left;
+	border-bottom: 1px solid #E5E5E5;
+}
+.intro-ls-part p{
+	float: left;	
+}
+.intro-ls-part .tr1{
+	width: 210px;
+}
+.intro-ls-part .tr2{
+	width: 210px;
+}
+.intro-ls-part .tr3{
+	width: 60px;
+}
+.intro-ls-body{
+	width: 100%;
+	height: 400px;
+}
+.title{
+	padding: 60px 0 30px;
+	line-height: 42px;
+	font-size: 30px;
+	color: #231815;
+	letter-spacing: 1.58px;
+}
+.part2{
+	width: 100%;
+}
+.part2-con{
+	float: left;
+	width: 386px;
+	padding: 30px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	border: 1px solid #E5E5E5;
+	border-radius: 24px;
+}
+.part2-con:nth-child(3n){
+	margin-right: 0;
+}
+.part2-con img{
+	overflow: hidden;
+	width: 325px;
+	height: 380px;
+	border-radius: 10px;
+}
+.part2-con h2{
+	margin-top: 10px;
+	line-height: 1.5;
+	font-size: 20px;
+	color: #231815;
+	letter-spacing: 1.05px;
+}
+.part2-con h3{
+	line-height: 1.5;
+	font-size: 20px;
+	color: #191D2B;
+}
+.part2-con p{
+	line-height: 1.5;
+	font-size: 16px;
+	color: #969190;
+}
+.part2-con p span{
+	margin-left: 8px;
+}
+/*modal*/
+.modal-gr-title{
+	line-height: 1;
+	font-size: 24px;
+    letter-spacing: 1.26px;
+}
+.modal-gr-part1{
+	margin-top: 15px;
+	padding: 20px 30px;
+	background: #F5F5F5;
+	border-radius: 16px;
+}
+.modal-gr-part1 p{
+	line-height: 45px;
+	font-size: 20px;	
+	text-align: right;
+}
+.modal-gr-part1 p span{
+	float: left;
+	font-size: 18px;
+}
+.modal-gr-part2{
+	margin-top: 24px;
+}
+.modal-gr-part2 label{
+	font-size: 16px;
+}
+.modal-gr-part2 label span{
+	margin-left: 13px;
+	font-size: 14px;
+	color: #969190;
+}
+.modal-gr-price{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 64px;
+	margin-top: 12px;
+	padding-right: 70px;
+	border: 1px solid #CACACA;
+	border-radius: 6px;
+	font-size: 18px;
+	color: #180000;
+}
+.modal-gr-price .inp{
+	width: 100%;
+	height: 100%;
+	line-height: 62px;
+	padding: 0 15px;
+	border: 0;
+	outline: 0;
+	font-size: 18px;
+	color: #180000;
+}
+.modal-gr-price .suffix{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 46px;
+	line-height: 62px;
+}
+.modal-gr-price .arrow{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 16px;
+	width: 14px;
+	height: 100%;
+	padding: 16px 0;
+}
+.modal-gr-price .arrow img{
+	display: block;
+	cursor: pointer;
+	width: 14px;
+}
+.modal-gr-footer{
+	padding: 30px 0;
+}
+.modal-gryhk-title{
+	line-height: 1;
+	font-size: 24px;
+    letter-spacing: 1.26px;
+}
+.modal-gryhk-part{
+	padding: 30px 0 20px;
+}
+.modal-gryhk-part p{
+	line-height: 25px;
+	padding-bottom: 15px;
+	font-size: 18px;
+	letter-spacing: 0.95px;
+}
+.modal-gryhk-part p span{
+	margin-right: 50px;
+	font-size: 16px;
+	letter-spacing: 0;
+}
+.modal-gryhk-part input{
+	float: left;
+	margin-right: 8px;
+}
+.modal-gryhk-footer{
+	padding: 0 0 20px;
+}

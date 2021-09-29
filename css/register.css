@@ -1,0 +1,261 @@
+/*button*/
+.btn-black-radius-large {	
+	display: block;
+  width: 100%;
+  height: 64px;  
+  line-height: 62px;
+  border: solid 1px #231815;
+  border-radius: 32px;
+  font-size: 20px;
+  background: #231815;
+  color: #FFFFFF;
+  margin-top: 70px;
+  text-align: center;
+}
+.btn-black-radius-large:hover{
+	opacity: 0.8;
+}
+.btn-black-radius-large[disabled]{
+	opacity: 0.25;
+}
+.btn-black-radius-large[disabled]:hover{
+	opacity: 0.15;
+}
+.btn-white-radius-medium{
+	display: block;
+	width: 248px;
+  height: 64px;
+  line-height: 62px;
+  border-radius: 32px;
+  border: 1px solid #CACACA;
+  background: #FFFFFF;
+  color: #231815;
+  font-size: 20px;
+  text-align: center;
+}
+.btn-white-radius-medium:hover{
+	opacity: 0.8;
+}
+.btn-black-radius-medium{
+	display: block;
+	width: 248px;
+  height: 64px;
+  line-height: 62px;
+  border-radius: 32px;
+  border: 1px solid #231815;
+  background: #231815;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+}
+.btn-black-radius-medium:hover{
+	opacity: 0.8;
+}
+/*content*/
+.register-content {
+	width: 640px; 
+  margin: 120px auto;
+  padding: 80px 60px;  
+  border: 1px solid #CACACA;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: #231815;
+}
+.register-title{
+	padding-bottom: 20px;
+  font-size: 30px;
+  color: #231815;
+  letter-spacing: 1.58px;  
+  text-align: center;
+}
+.register-tip {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+.register-tip a{
+	color: #000;
+	text-decoration: none;
+}
+.register-tip a:hover{
+	opacity: 0.8;
+}
+.register-txt-forget {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #0066ED;
+  text-align: right;
+  cursor: pointer;
+}
+.register-txt-forget a{
+	 color: #0066ED;
+	 text-decoration: none;
+}
+.register-txt-forget a:hover{
+	opacity: 0.8;
+}
+.register-lines {
+  margin-top: 48px;
+  position: relative;
+  z-index: 0;
+}
+.register-lines:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #E5E5E5;
+}
+.register-lines p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -90px;
+  width: 180px;
+  height: 25px;
+  line-height: 25px;
+  background: white;
+  text-align: center;  
+  font-size: 18px;
+  color: #969190;
+ }
+ .register-share{
+  overflow: hidden;
+  margin-top: 45px;
+}
+.register-share-box{
+	float: left;
+  width: 152px;
+  height: 48px;
+  line-height: 24px;
+  margin-right: 31px;
+  padding-top: 11px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px; 
+  text-align: center;
+  font-size: 18px;
+  color: #969190;  
+  cursor: pointer;
+}
+.register-share-box:last-child{
+	margin-right: 0;
+}
+.register-share-box img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+.register-share-box a{
+  color: #969190;  
+  text-decoration: none;
+}
+.register-item {
+  position: relative;
+  z-index: 0;
+  margin-top: 40px;
+}
+.register-item label{
+	font-size: 16px;
+}
+.register-item label span{
+	margin-left: 15px;
+}
+.register-input{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+  height: 64px;
+  margin-top: 12px;
+  border-radius: 6px;  
+  padding-left: 16px;
+  border: 1px solid #CACACA;
+  font-size: 18px;
+}
+.register-input-clear {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  top: 52px;  
+  cursor: pointer;
+}
+.register-input-clear-pswd{
+  position: absolute;
+  z-index: 2;
+  right: 65px;
+  top: 52px;
+  cursor: pointer;  
+}
+.register-input-clear-send{
+	position: absolute;
+  z-index: 2;
+  right: 100px;
+  top: 52px;
+  cursor: pointer; 
+}
+.register-input-focus {
+  border: 1px solid #969190;
+}
+.register-input-over {
+  border: 1px solid #231815;
+}
+.register-input-error {
+  border: 1px solid #FF5B98;
+}
+.register-item-error-text {
+	position: absolute;
+  bottom: -20px;
+  font-size: 12px;
+  color: #FF5B98; 
+}
+.register-input-eyes-zy {
+  position: absolute;
+  right: 24px;
+  top: 52px;
+  z-index: 2;
+  cursor: pointer;
+}
+.register-input-eyes-by {
+  position: absolute;
+  right: 24px;
+  top: 48px;
+  z-index: 2;
+  cursor: pointer;
+}
+/* 验证码 */
+.btn-txt-send {
+	position: absolute;
+  right: 24px;
+  top: 50px;
+  z-index: 2;
+  height: 19px;
+  border: 0;
+  font-size: 14px;
+  color: #0066ED;
+  background: transparent;
+}
+/* 忘记密码 */
+.btn-groups-forget {
+  margin-top: 60px;
+}
+.btn-groups-forget button:nth-of-type(2) {
+  margin-left: 15px;
+}
+/* success */
+.register-success-title {
+  font-size: 30px;
+  color: #231815;
+  letter-spacing: 1.58px;
+  text-align: center;
+}
+.register-success-icon {
+  width: 100%;
+  height: 110px;
+  text-align: center;
+  margin-top: 40px;
+}
+.fd-suc-icon img {
+  width: 110px;
+  height: 110px;
+}

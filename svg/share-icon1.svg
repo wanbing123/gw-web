@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="商品详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-83.000000, -74.000000)">
+            <g id="Facebook" transform="translate(83.000000, 74.000000)">
+                <rect id="矩形" fill="#3C5A99" x="0" y="0" width="40" height="40" rx="8"></rect>
+                <path d="M27.4242991,40 L27.4242991,24.6679612 L32.6130841,24.6679612 L33.3906542,18.6923213 L27.4242991,18.6923213 L27.4242991,14.8815534 C27.4242991,13.1466902 27.9028037,11.9752868 30.4149533,11.9752869 L33.6,11.9752869 L33.6,6.63724626 C33.046729,6.56310683 31.1476636,6.4 28.9495327,6.4 C24.3439253,6.4 21.2037383,9.18764341 21.2037383,14.2884378 L21.2037383,18.6923213 L16,18.6923213 L16,24.6679612 L21.2037383,24.6679612 L21.2037383,40 L27.4242991,40 L27.4242991,40 Z" id="路径" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

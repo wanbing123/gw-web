@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="52px" viewBox="0 0 27 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>banner翻页icon右</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polyline id="path-1" points="691 1259 716 1287.1746 691 1309"></polyline>
+    </defs>
+    <g id="首页确认" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-690.000000, -1258.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="banner翻页icon右" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
